@@ -2,7 +2,7 @@
 import os.path as op
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-
+from flask.ext.mail import Mail
 from flask_admin import Admin
 
 
@@ -20,3 +20,4 @@ file_path = op.join(op.dirname(__file__), 'static')
 init_admin = Admin()
 
 
+mail = Mail()

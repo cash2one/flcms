@@ -35,6 +35,13 @@ class Config(object):
     SECURITY_REGISTERABLE = True
     SECURITY_SEND_REGISTER_EMAIL = False
 
+    # Flask-Mail
+    MAIL_SERVER = "smtp.gmail.com"
+    MAIL_PORT = 465
+    MAIL_USE_SSL = True
+    MAIL_USERNAME = 'mail@gmail.com'
+    MAIL_PASSWORD = '34534534534'
+
 
 class ProductionConfig(Config):
     DEBUG = False

@@ -1,4 +1,7 @@
 {% extends "layout.html" %}
+
+{% set active_page = "contact" %}
+
 {% block content %}
 <div class="inner-content">
 	<div class="portfolio-page">
@@ -11,8 +14,8 @@
 					<div class="devider"></div>
 
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis metus vitae ligula elementum ut luctus lorem facilisis. Sed non leo nisl, ac euismod nisi. Aenean augue dolor, facilisis id fringilla ut, tempus vitae nibh. Nullam nec diam risus. Donec laoreet ultricies rhoncus. Aliquam adipiscing. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-					
-					<form role="form" name="ajax-form" id="ajax-form" action="php/contact.php" method="post" class="form-main">
+
+					<form role="form" name="ajax-form" id="ajax-form" action="/contact/" method="post" class="form-main">
 			            <div class="col-xs-12 text-left">
 			                <div class="row"> 
 			                    <!-- Name -->           

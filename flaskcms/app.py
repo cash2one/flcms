@@ -3,7 +3,7 @@ import os.path as op
 from flask import Flask, render_template
 from flask_admin import helpers as admin_helpers
 from flask_security import Security, SQLAlchemyUserDatastore
-from flaskcms.extensions import db, migrate
+from flaskcms.extensions import db, migrate, mail
 from flaskcms.user.models import User, Role
 from flaskcms.post.models import Post, Tag
 from flaskcms.works.models import Works, Image, Category
@@ -43,6 +43,8 @@ def configure_extensions(app):
 
     # Flask-Migrate
     migrate.init_app(app, db)
+
+    mail.init_app(app)
 
 
 def configure_admin(app):
