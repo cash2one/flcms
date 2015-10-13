@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="inner-content">
+	<div class="portfolio-page">
+		<!-- Filter -->
+		<div class="filter-box">
+			<ul class="filter list-inline text-center">
+				<li><a href="#" class="active" data-filter="*">All Works</a></li>
+
+                {% for code, name in category.iteritems() %}
+                <li><a href="#" data-filter=".{{ code }}">{{ name }}</a></li>
+                {% endfor %}
+
+			</ul>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+		        <div class="portfolio-box">
+		        	{% for item in works %}
+			        <!-- Work-item -->
+					<div class="col-sm-6 {{ item['type'] }}">
+						<div class="item-img-wrap">
+			              <img src="{{ url_for('static', filename=item['path']) }}" class="img-responsive" alt="{{ item['name'] }}">
+			              <div class="item-img-overlay">
+			                <a href="{{ url_for('static', filename=item['path']) }}" class="show-image">
+			                  <span></span>
+			                </a>
+			              </div>
+			            </div>
+					</div>
+					{% endfor %}
+
+			    </div>
+
+		    </div>
+	    </div>
+    </div>
+</div>
+{% endblock %}

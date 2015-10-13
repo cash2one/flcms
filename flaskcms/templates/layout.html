@@ -1,0 +1,138 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+	<!-- Meta Tags -->
+	<meta charset="utf-8"/>
+	<meta name="description" content="Phozer-personal and photography template"/>
+	<meta name="keywords" content="responsive, creative, html/css, theme" />
+	<meta name="author" content="harry"/>
+
+	<!-- Site Title-->
+	<title>Phozer</title>
+
+	<!-- Mobile Specific Metas-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+	<link href='http://fonts.googleapis.com/css?family=Raleway:400,200,300,500,600,700,800' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Crete+Round:400,400italic' rel='stylesheet' type='text/css'>
+
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" media="screen">	
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/magnific-popup.css') }}" media="screen">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.min.css') }}" media="screen">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/simpletextrotator/simpletextrotator.css') }}" media="screen">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" media="screen">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/light-blue.css') }}" media="screen">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}" media="screen">
+	
+</head>
+<body>
+
+	<!-- Container -->
+	<div id="container">
+		
+		<!-- Header
+		================================================== -->
+		<header>
+			<div class="logo-box logo">
+				<h1><a href="/">PHOZER </a></h1>
+                <p>A digital photography studio</p>
+			</div>
+			
+			<a class="elemadded responsive-link" href="#">Menu</a>
+
+			<div class="menu-box">
+				<ul class="menu">
+					<li>
+						<a class="active" href="/">
+							<i class="fa fa-home"></i><span>Home</span>
+						</a>
+					</li>
+					<li>
+						<a href="about.html">
+							<i class="fa fa-magic"></i><span>About</span>
+						</a>
+					</li>
+					<li class="drop">
+						<a href="/works/">
+							<i class="fa-picture-o fa"></i><span>Works</span>
+						</a>
+					</li>
+					<li class="drop">
+                        <a href="/blog/">
+                            <i class="fa fa-bolt"></i>
+                            <span>Blog</span>
+                        </a>
+					</li>
+					
+					<li><a href="/contact/"><i class="fa fa-phone"></i><span>Contact</span></a></li>
+				</ul>				
+			</div>
+
+			<!-- Social icon -->
+			<div class="social-box">
+				<ul class="social-icons">
+					<li><a href="#" class="facebook" ><i class="fa fa-facebook"></i></a></li>
+					<li><a href="#" class="twitter" ><i class="fa fa-twitter"></i></a></li>
+					<li><a href="#" class="google" ><i class="fa fa-google-plus"></i></a></li>
+					<li><a href="#" class="linkedin" ><i class="fa fa-linkedin"></i></a></li>
+					<li><a href="#" class="pinterest" ><i class="fa fa-pinterest"></i></a></li>
+					<li><a href="#" class="youtube" ><i class="fa fa-youtube"></i></a></li>
+				</ul>
+				<p class="copyright">&#169; 2015 Phozer, All Rights Reserved</p>
+			</div>
+		</header>
+		<!-- End Header -->
+
+		<!-- content 
+		================================================== -->
+		<div id="content">
+
+		{% with messages = get_flashed_messages() %}
+		  {% if messages %}
+		    {% for message in messages %}
+			  <div class="alert alert-warning alert-dismissible" role="alert">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+				{{message}}
+			  </div>
+			{% endfor %}
+		  {% endif %}
+		{% endwith %}
+		
+		{% block body %}{% endblock %}
+
+		{% block content %}
+		{% endblock %}
+		</div>
+		<!-- End content -->
+
+	</div>
+	<!-- End Container -->
+
+
+	<!-- Preloader -->
+	<div class="preloader">
+		<img alt="" src="{{ url_for('static', filename='images/preloader.gif') }}">
+	</div>
+
+
+	<!-- JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.migrate.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.imagesloaded.min.js') }}"></script>
+  	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.isotope.min.js') }}"></script>
+  	<script type="text/javascript" src="{{ url_for('static', filename='assets/simpletextrotator/jquery.simple-text-rotator.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/retina-1.1.0.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/SmoothScroll.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+	{% block script %}
+	{% endblock %}
+
+</body>
+</html>

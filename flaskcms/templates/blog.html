@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="inner-content">
+				<div class="blog-page">
+				    <div class="container">
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    {% for post in posts %}
+
+                                    <!-- Blog-item -->
+                                    <div class="col-sm-12 m-b-lg">
+                                        <a href="/blog/{{ post['id'] }}-{{ post.slug }}/" class="img-wrapper">
+                                            <img src="{{ url_for('static', filename=post['image_path']) }}" alt="blog" class="img-responsive">
+                                            <div class="img-overlay">
+                                                <p class="more">View More</p>
+                                            </div>
+                                        </a><!--image-wrapper end-->
+                                        <div class="blog-desc">
+                                            <h3><a href="/blog/{{ post.slug }}/">{{ post['title'] }}</a></h3>
+                                            <div class="post-date"><span>{{ post['date'] }}</span></div>
+                                            <p>{{ post['text'] }}</p>
+                                            <p class="text-right"><a href="blog-post.html" class="btn btn-custom">Read More</a></p>
+                                        </div><!--blog-desc-->
+                                    </div>
+
+                                    {% endfor %}
+
+                                </div><!--.row-->
+                            </div>
+                        </div><!--filter row-->
+                    </div>
+                </div>
+			</div>
+
+{% endblock %}
